@@ -16,8 +16,11 @@ Including another URLconf
     3. Testing: Run the development server and visit http://
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/accounts/', include('apps.accounts.urls')),
+    path('api/schedules/', include('apps.schedules.urls')),
+    path('api/payments/', include('apps.payments.urls')),
 ]
